@@ -1,5 +1,5 @@
 project "spdlog"
-	kind "StaticLib"
+	kind "None"
 	language "C++"
 	warnings "off"
 
@@ -9,7 +9,12 @@ project "spdlog"
 	files
 	{
 		"include/**.h",
-		"src/**.cpp"
+	}
+
+	defines
+	{
+		"SPDLOG_MSVC_UTF8",
+		"FMT_UNICODE"
 	}
 
 	filter "system:windows"
